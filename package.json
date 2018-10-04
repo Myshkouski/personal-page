@@ -3,7 +3,7 @@
   "scripts": {
     "spa": "cross-env DEBUG=nuxt:* nuxt --spa",
     "gen": "cross-env NODE_ENV=production nuxt generate --spa",
-    "gen:gh-pages": "cross-env NODE_ENV=production PUBLIC_PATH=https://myshkouski.github.io/ ROUTER_BASE=personal-page/ nuxt generate --spa"
+    "gen:gh-pages": "cross-env NODE_ENV=production PUBLIC_PATH=https://myshkouski.github.io/ ROUTER_BASE=/personal-page/ nuxt generate --spa"
   },
   "dependencies": {
     "nuxt": "^2.1.0"
