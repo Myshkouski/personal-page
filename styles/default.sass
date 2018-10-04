@@ -1,0 +1,17 @@
+*
+  box-sizing: border-box
+
+body, h1, h2, h3, h4, h5, h6, p
+  margin: 0
+  padding: 0
+
+@for $level from 1 through 6
+  h#{$level}
+    font-size: #{2.4 - ($level * .2)}rem
+
+a
+  &, &:visited
+    color: unset
+
+p, span, i, b, textarea, input[type="text"]
+  font-size: 1rem

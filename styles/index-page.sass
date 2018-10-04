@@ -1,0 +1,90 @@
+@import "vars"
+
+$icon-size: 1.75rem
+
+section, footer
+  padding: 2rem 1rem .5rem
+
+section
+  text-align: center
+
+  &.hero
+    display: flex
+    flex-flow: column
+    justify-content: center
+    height: 100vh
+    min-height: 20rem
+    max-height: 40rem
+    background-color: #9ea
+
+  // &.about-me
+    p:not(:last-child)
+      border-bottom: 1px solid #aaa
+
+  .header, p
+    margin-bottom: 1rem
+
+  p
+    padding: .5rem
+
+a
+  text-decoration: underline
+
+footer
+  background-color: #333
+  color: #fff
+
+  .content-wrapper
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    & > div
+      margin: .5rem 0
+
+  .contacts
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+    & > div
+      display: flex
+      align-items: center
+
+    .icon
+      width: $icon-size
+      height: $icon-size
+      margin: .2rem
+      margin-left: 0
+      background-size: cover
+      background-image: url("/img/contacts-sprite.png")
+
+    .tel .icon
+      background-position: 0 -1 * $icon-size
+
+    .tg .icon
+      background-position: 0 -2 * $icon-size
+
+
+@media screen and (max-width: $mobile-breakpoint)
+  footer .content-wrapper
+    flex-direction: column
+    align-items: flex-start
+
+.icon
+  display: inline-block
+  background-repeat: no-repeat
+
+  &.photo
+    width: 9rem
+    height: 9rem
+    margin: 2rem auto
+    border-radius: 50%
+    background-image: url("/img/selfie-1.jpeg")
+    background-position: center
+    background-size: contain
+    transition: all .2s ease
+
+    &:hover
+      transform: scale(1.05)
+      cursor: pointer
