@@ -2,6 +2,17 @@
 
 $icon-size: 1.75rem
 
+@mixin fade-in($duration: .5s)
+  @keyframes fade-in
+    0%
+      transform: translateY(.5rem)
+      opacity: 0
+    100%
+      transform: translateY(0)
+      opacity: 1
+
+  animation: fade-in $duration ease-out
+
 section, footer
   padding: 2rem 1rem .5rem
 
@@ -17,9 +28,8 @@ section
     max-height: 40rem
     background-color: #9ea
 
-  // &.about-me
-    p:not(:last-child)
-      border-bottom: 1px solid #aaa
+    .header
+      @include fade-in()
 
   .header, p
     margin-bottom: 1rem
@@ -57,14 +67,13 @@ footer
       margin: .2rem
       margin-left: 0
       background-size: cover
-      background-image: url("/img/contacts-sprite.png")
+      background-image: url("~assets/img/contacts-sprite.png")
 
     .tel .icon
       background-position: 0 -1 * $icon-size
 
     .tg .icon
       background-position: 0 -2 * $icon-size
-
 
 @media screen and (max-width: $mobile-breakpoint)
   footer .content-wrapper
@@ -76,15 +85,17 @@ footer
   background-repeat: no-repeat
 
   &.photo
+    @include fade-in()
+
     width: 9rem
     height: 9rem
-    margin: 2rem auto
+    margin: 0 auto 2rem
     border-radius: 50%
-    background-image: url("/img/selfie-1.jpeg")
+    background-image: url("~assets/img/selfie-1.jpeg")
     background-position: center
     background-size: contain
-    transition: all .2s ease
+    transition: transform .2s ease-out
 
     &:hover
-      transform: scale(1.05)
+      transform: translate3d(0, 0, 0) scale(1.05)
       cursor: pointer
