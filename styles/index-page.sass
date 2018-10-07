@@ -32,7 +32,7 @@ section
       @include fade-in()
 
   .header, p
-    margin-bottom: 1rem
+    margin: .5rem 0
 
   p
     padding: .5rem
@@ -69,12 +69,6 @@ footer
       background-size: cover
       background-image: url("~assets/img/contacts-sprite.png")
 
-    .tel .icon
-      background-position: 0 -1 * $icon-size
-
-    .tg .icon
-      background-position: 0 -2 * $icon-size
-
 @media screen and (max-width: $mobile-breakpoint)
   footer .content-wrapper
     flex-direction: column
@@ -99,3 +93,33 @@ footer
     &:hover
       transform: translate3d(0, 0, 0) scale(1.05)
       cursor: pointer
+
+.button-wrapper
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: center
+
+.button
+  display: flex
+  justify-content: space-around
+  align-items: center
+  padding: .5rem 1rem
+
+  &.tg
+    color: #fff
+    background-color: #58f
+
+  &.mail
+    color: #fff
+    background-color: #f44
+
+.icon
+  width: $icon-size
+  height: $icon-size
+  margin-right: .2rem
+  background-image: url("~assets/img/contacts-sprite.png")
+  background-size: cover
+
+  &.tg
+    background-position: 0 -2 * $icon-size

@@ -2,7 +2,7 @@
   "description": "My personal webpage",
   "scripts": {
     "spa": "nuxt --spa",
-    "spa:dev": "cross-env DEBUG=nuxt:* npm run spa",
+    "spa:dev": "cross-env DEBUG=nuxt:*,app:* npm run spa",
     "gen": "nuxt generate --spa",
     "gen:dev": "cross-env NODE_ENV=production",
     "gen:gh-pages": "cross-env NODE_ENV=production ROUTER_BASE=/personal-page/ npm run gen"
@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
+    "debug": "^4.0.1",
+    "gl-matrix": "^2.8.1",
     "node-sass": "^4.9.3",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
