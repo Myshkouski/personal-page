@@ -5,25 +5,27 @@ div._
 			div.content-wrapper
 				div.photo.icon
 				div
-					h2.header hello
-					h4.header I'm Alexei Myshkouski
+					h2.header Welcome
+					h3.header I'm Alexei Myshkouski
 		section.about-me
 			div.content-wrapper
 				h5.header a few words about me
 				p live in Minsk, Belarus
 				p gratituded from #[a(href="http://bseu.by/" target="empty") Belarussian State Economic University], Finance & Banking
-				p experienced in full-stack JavaScript development (#[em not] professional)
+				p experienced in full-stack JavaScript development
 				p also you could ask me for detailed CV using
 				div
 					div.button-wrapper
-						div.button.tg
-							div.icon.tg
-							span Telegram bot
+						a(:href="links.tgBot" target="blank")
+							div.button.tg
+								div.icon.tg
+								span Telegram bot
 					p or
 					div.button-wrapper
-						div.button.mail
-							div.icon.mail
-							span Contact by email
+						a(:href="links.mailto + queries.cvByMail")
+							div.button.mail
+								div.icon.mail
+								span Contact by email
 		section.about-my-page
 			div.content-wrapper
 				h5.header ...and about this page
@@ -33,13 +35,13 @@ div._
 		div.content-wrapper
 			div.contacts
 				div
-					div.tel.icon
+					//- div.tel.icon
 					a(:href="links.tel") {{ contacts.tel }}
 				div
-					div.tg.icon
-					a(:href="links.tg" target="empty") {{ contacts.tgNickname }}
+					//- div.tg.icon
+					a(:href="links.tg" target="empty") @{{ contacts.tgNickname }}
 				div
-					div.mail.icon
+					//- div.mail.icon
 					a(:href="links.mailto" target="empty") {{ contacts.email }}
 			div.lang-selector
 				div
@@ -63,16 +65,16 @@ export default {
   computed: {
     links() {
       return {
-        mailto: 'mailto://' + this.contacts.email,
+        mailto: 'mailto:' + this.contacts.email,
         tg: 'https://t.me/' + this.contacts.tgNickname,
-        tgBot: '',
-        tel: 'tel://' + this.contacts.tel.replace(/[^+\d]/g, '')
+        tgBot: 'https://t.me/MyshkouskiBot',
+        tel: 'tel:' + this.contacts.tel.replace(/[^+\d]/g, '')
       }
     },
 
     queries() {
       return {
-        cvByMail: '?body=Send me your CV.'
+        cvByMail: '?subject=Request for CV&body=Send me your CV.'
       }
     }
   }
